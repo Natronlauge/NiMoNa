@@ -11,6 +11,7 @@ x = np.linspace(0, 7, 256)
 y = x0*np.exp(-a*x)
 
 plt.plot(x,y)
+plt.title('Aufgabenteil A')
 plt.xlabel('$t$')
 plt.ylabel('$x(t)$')
 
@@ -19,9 +20,11 @@ plt.ylabel('$x(t)$')
 i = h
 n = i+h
 x = np.linspace(0, h, 2)
-y = x0+(h*(-a*x))
+y = np.linspace(0, h, 2)
+y[0] = x0
+y[1] = y[0]+(h*(-a*y[0]))
 plt.plot (x, y, color='red')
-while(n<7.5):
+while(n< 7+h):
     x = np.linspace(i, n, 2)
     y = y+(h*(-a*y))
     plt.plot(x, y, color='red')
@@ -30,8 +33,6 @@ while(n<7.5):
     
 plt.show()
 
-#BIS HIER KLAPPTS!!!
-    
 #analytisch für Teil b
 
 h = 0.1
@@ -40,6 +41,7 @@ x = np.linspace(0, 7, 256)
 y = x0*np.exp(-a*x)
 
 plt.plot(x,y)
+plt.title('Aufgabenteil B')
 plt.xlabel('$t$')
 plt.ylabel('$x(t)$')
 
@@ -48,9 +50,11 @@ plt.ylabel('$x(t)$')
 i = h
 n = i+h
 x = np.linspace(0, h, 2)
-y = x0+(h*(-a*x))
+y = np.linspace(0, h, 2)
+y[0] = x0
+y[1] = y[0]+(h*(-a*y[0]))
 plt.plot (x, y, color='red')
-while(n<7.1):
+while(n< 7+h):
     x = np.linspace(i, n, 2)
     y = y+(h*(-a*y))
     plt.plot(x, y, color='red')
@@ -67,6 +71,7 @@ x = np.linspace(0, 7, 256)
 y = x0*np.exp(-a*x)
 
 plt.plot(x,y)
+plt.title('Aufgabenteil C')
 plt.xlabel('$t$')
 plt.ylabel('$x(t)$')
 
@@ -75,9 +80,11 @@ plt.ylabel('$x(t)$')
 i = h
 n = i+h
 x = np.linspace(0, h, 2)
-y = x0+(h*(-a*x))
+y = np.linspace(0, h, 2)
+y[0] = x0
+y[1] = y[0]+(h*(-a*y[0]))
 plt.plot (x, y, color='red')
-while(n<7.01):
+while(n< 7+h):
     x = np.linspace(i, n, 2)
     y = y+(h*(-a*y))
     plt.plot(x, y, color='red')
@@ -96,6 +103,7 @@ x = np.linspace(0, 7, 256)
 y = x0*np.exp(-a*x)
 
 plt.plot(x,y)
+plt.title('Aufgabenteil D')
 plt.xlabel('$t$')
 plt.ylabel('$x(t)$')
 
@@ -104,9 +112,11 @@ plt.ylabel('$x(t)$')
 i = h
 n = i+h
 x = np.linspace(0, h, 2)
-y = x0+(h*(-a*x))
+y = np.linspace(0, h, 2)
+y[0] = x0
+y[1] = y[0]+(h*(-a*y[0]))
 plt.plot (x, y, color='red')
-while(n<7.5):
+while(n< 7+h):
     x = np.linspace(i, n, 2)
     y = y+(h*(-a*y))
     plt.plot(x, y, color='red')
