@@ -124,6 +124,3 @@ while(n< 7+h):
     n = n+h
     
 plt.show()
-
-
-
