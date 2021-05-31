@@ -60,7 +60,7 @@ for n in range(t.size-1):
 plt.plot(t, phase1, color="red", label="Phase 1")
 plt.plot(t, phase2, color="blue", label="Phase 2")
 plt.plot(t, phase3, color="green", label="Phase 2")
-plt.title("Netzwerk a la Lennart")
+plt.title("Ein kleines Netzwerk")
 plt.xlabel('$t$')
 plt.ylabel('$f(t)$')
 plt.show()

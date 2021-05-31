@@ -24,16 +24,16 @@ while i < round(t_euler.size):
     i = i+1
 
 plt.plot(t_euler, p_euler, color='blue', label="Hasenpopulation")
-plt.plot(t_euler, p_fuuux, color='red', label="Fuchspopulation")
-plt.title('Population gegen die Zeit mit Euler-Methode')
+plt.plot(t_euler, p_fuuux, color='red', label="Luchspopulation")
+plt.title('Population gegen die Zeit')
 plt.legend()
 plt.xlabel('$t$')
 plt.ylabel('$p(t)$')
 plt.show()
 plt.plot(p_euler, p_fuuux, color='red')
-plt.title('Phasenraumtrajektorie mit der Euler-Methode')
+plt.title('Phasenraumtrajektorie')
 plt.xlabel('$Hasenpopulation$')
-plt.ylabel('$Fuchspopulation$')
+plt.ylabel('$Luchspopulation$')
 plt.show()
 
 #Heun-Methode
@@ -53,15 +53,15 @@ while i < round(t_heun.size):
     i = i+1
 
 plt.plot(t_heun, p1_heun, color='blue', label='Hasenpopulation')
-plt.plot(t_heun, p2_heun, color='red', label='Fuchspopulation')
-plt.title('Populationen gegen die Zeit mit der Heun-Methode')
+plt.plot(t_heun, p2_heun, color='red', label='Luchspopulation')
+plt.title('Populationen gegen die Zeit')
 plt.legend()
 plt.xlabel('$t$')
 plt.ylabel('$p(t)$')
 plt.show()
-plt.title('Phasenraumtrajektorie mit der Heun-Methode')
+plt.title('Phasenraumtrajektorie')
 plt.xlabel('$Hasenpopulation$')
-plt.ylabel('$Fuchspopulation$')
+plt.ylabel('$Luchspopulation$')
 plt.plot(p1_heun, p2_heun, color='red')
 plt.show()
 
