@@ -5,7 +5,12 @@ from kuramoto import *
 import matplotlib.gridspec as gridspec
 import os
 
-z = 1
+fig = plt.figure(figsize=(14, 8))
+gs = gridspec.GridSpec(nrows=2, ncols=2, height_ratios=[4, 1])
+ax_map = fig.add_subplot(gs[:, 0])
+ax_circle = fig.add_subplot(gs[0, 1])
+ax_synchro = fig.add_subplot(gs[1, 1])
+
 for z in range(100):
 
     Ausfall = 0
@@ -20,7 +25,7 @@ for z in range(100):
 
     N = A.shape[0]
 
-    Nt = 2500
+    Nt = 5000
 
     plt.ion()
 
@@ -36,12 +41,6 @@ for z in range(100):
     ts = [0]
     r, psi = order_parameter(thetas)
     rs = [r]
-
-    fig = plt.figure(figsize=(14, 8))
-    gs = gridspec.GridSpec(nrows=2, ncols=2, height_ratios=[4, 1])
-    ax_map = fig.add_subplot(gs[:, 0])
-    ax_circle = fig.add_subplot(gs[0, 1])
-    ax_synchro = fig.add_subplot(gs[1, 1])
 
     update = 10
 
@@ -88,4 +87,3 @@ for z in range(100):
             if (Ausfall == 1):
                 A = B
                 K = A
-    z += 1
