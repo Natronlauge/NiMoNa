@@ -20,7 +20,7 @@ for z in range(100):
     # model parameters
 
     positions = np.load('./networks/ukPos.npy')
-    A = np.load('./networks/ukAdj.npy')
+    A = np.load('./networks/Bisher3_.npy')
     B = np.load('./networks/randomAdj.npy')
 
     N = A.shape[0]
@@ -29,7 +29,7 @@ for z in range(100):
 
     plt.ion()
 
-    A = A * 50
+    A = A
     K = A
     C = A - B
     # np.random.seed(420)
@@ -47,7 +47,9 @@ for z in range(100):
     ax_map = plot_network(ax_map, positions, A, C, thetas, Ausfall)
     circlex = np.linspace(0, 2 * np.pi, 256)
 
-    for i in range(Nt):
+    i = 0
+    while(i<Nt):
+    #for i in range(Nt):
         thetas = rk4_step(kuramoto, thetas, [omegas, K], h)
         xs += [thetas]
         ts += [ts[-1] + h]
@@ -87,3 +89,6 @@ for z in range(100):
             if (Ausfall == 1):
                 A = B
                 K = A
+        if(r>0.95):
+            i=Nt
+        i = i+1
