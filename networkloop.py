@@ -20,8 +20,8 @@ for z in range(100):
     # model parameters
 
     positions = np.load('./networks/ukPos.npy')
-    A = np.load('./networks/Bisher3_.npy')
-    B = np.load('./networks/randomAdj.npy')
+    A = np.load('./networks/uk50Adj.npy')
+    B = np.load('./networks/gesamt6Adj.npy')
 
     N = A.shape[0]
 
@@ -84,11 +84,12 @@ for z in range(100):
             filename = "simulation" + str(i/10) + ".png"
             plt.savefig('./sim' + str(z) + '/' + filename)
 
-            if (r > 3):
-                Ausfall = 1
-            if (Ausfall == 1):
-                A = B
-                K = A
+            if (i>2500):
+                if (r < 0.9):
+                    Ausfall = 1
+                if (Ausfall == 1):
+                    A = B
+                    K = A
         if(r>0.95):
             i=Nt
         i = i+1
