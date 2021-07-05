@@ -21,15 +21,15 @@ for z in range(100):
 
     positions = np.load('./networks/ukPos.npy')
     A = np.load('./networks/uk50Adj.npy')
-    B = np.load('./networks/gesamt6Adj.npy')
+    B = np.load('./networks/Bisher3_.npy')
 
     N = A.shape[0]
 
-    Nt = 5000
+    Nt = 7500
 
     plt.ion()
 
-    A = A
+    #A = A*50
     K = A
     C = A - B
     # np.random.seed(420)
@@ -84,12 +84,20 @@ for z in range(100):
             filename = "simulation" + str(i/10) + ".png"
             plt.savefig('./sim' + str(z) + '/' + filename)
 
-            if (i>2500):
-                if (r < 0.9):
+            if (i>3000):
+                if (r < 0.99):
                     Ausfall = 1
                 if (Ausfall == 1):
                     A = B
                     K = A
-        if(r>0.95):
+
+        if (r > 0.99):
             i=Nt
-        i = i+1
+        else:
+            i=i+1
+    if (i == Nt):
+        datei = open('r_werte.txt', 'a')
+        print(datei)
+        datei.write("\n sim" + str(z) + ": " + str(r))
+        datei.close()
+
